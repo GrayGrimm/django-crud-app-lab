@@ -6,4 +6,4 @@ def home(request):
     return HttpResponse('<h1>Welcome to the Homesteaders Garden Journal</h1>')
 
 def about(request):
-    return HttpResponse('<h1>About the Homestead Journal')
+    return render(request, 'about.html')
