@@ -1,0 +1,152 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+:root {
+  font-size: 62.5%;
+  --bg-color: #fdfaf6;
+  --accent: #a67c52;
+  --accent-light: #d8c3a5;
+  --text-color: #3e3e3e;
+  --link-hover: #6b4f3b;
+  --button-bg: #f4f1ee;
+  --button-hover: #eae5e0;
+  --border: 2px solid #a67c52;
+  --font-title: 'Georgia', serif;
+  --font-body: 'Courier New', monospace;
+  --font-xl: 2.4rem;
+  --font-l: 1.8rem;
+  --font-reg: 1.6rem;
+  --radius: 6px;
+  --shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+  font-family: var(--font-body);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+header {
+  width: 100%;
+  background-color: var(--accent-light);
+  border-bottom: var(--border);
+  padding: 10px 0;
+  text-align: center;
+  font-family: var(--font-title);
+  font-size: var(--font-xl);
+  box-shadow: var(--shadow);
+}
+
+nav {
+  margin: 10px 0;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  margin: 0 10px;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: bold;
+  font-size: var(--font-reg);
+}
+
+nav a:hover {
+  color: var(--link-hover);
+}
+
+main {
+  width: 100%;
+  max-width: 1000px;
+  padding: 20px;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-title);
+  margin-bottom: 10px;
+}
+
+h1 {
+  font-size: var(--font-xl);
+}
+
+h2 {
+  font-size: var(--font-l);
+}
+
+.page-content {
+  font-size: var(--font-reg);
+  line-height: 1.6;
+}
+
+.btn {
+  font-size: var(--font-reg);
+  padding: 8px 16px;
+  border-radius: var(--radius);
+  border: var(--border);
+  background-color: var(--button-bg);
+  font-weight: bold;
+  cursor: pointer;
+  margin: 5px;
+  font-family: inherit;
+}
+
+.btn:hover {
+  background-color: var(--button-hover);
+}
+
+.submit {
+  color: #2f6f2f;
+  border-color: #2f6f2f;
+}
+
+.warn {
+  color: #b45f06;
+  border-color: #b45f06;
+}
+
+.danger {
+  color: #a80000;
+  border-color: #a80000;
+}
+
+.secondary {
+  color: #555;
+  border-color: #555;
+}
+
+@media only screen and (min-width: 768px) {
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+
+  nav ul {
+    flex-wrap: nowrap;
+  }
+
+  main {
+    min-height: calc(100vh - 60px);
+  }
+  }

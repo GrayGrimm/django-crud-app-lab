@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+<link
+  rel="stylesheet"
+  href="{% static 'css/plants/plant-index.css' %}"
+/>
+{% endblock %} {% block content %}
+<section class="card-container">
+    {% for plant in plants %}
+    <div class="card">
+        <div class="card-content">
+            <h2 class="card-title">{{ plant.name }}</h2>
+            <p class="page-content"> {{ plant.name }} is of the {{ plant.variety }} variety</p>
+            <p class="page-content"> It is a {{ plant.category }}.</p>
+        </div>
+    </div>
+    {% endfor %}
+</section>
+
+{% endblock %}

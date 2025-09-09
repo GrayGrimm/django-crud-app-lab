@@ -1,0 +1,50 @@
+.card-container {
+  padding: 0 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: var(--bg-color); /* soft parchment backdrop */
+}
+
+.card {
+  width: 280px;
+  margin: 12px;
+  border: 2px solid var(--accent);
+  border-radius: var(--radius);
+  background-color: var(--button-bg);
+  box-shadow: var(--shadow);
+  font-family: var(--font-body);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.card-content {
+  padding: 12px;
+  width: 100%;
+}
+
+.card h2 {
+  margin: 8px 0;
+  font-size: var(--font-l);
+  font-family: var(--font-title);
+  color: var(--accent);
+}
+
+.card p {
+  margin: 6px 0;
+  font-size: var(--font-reg);
+  color: var(--text-color);
+  line-height: 1.5;
+}
+
+.card > a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.usr-img {
+  display: none; /* removed for now, no images available */
+}
