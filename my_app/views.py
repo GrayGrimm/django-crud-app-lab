@@ -1,17 +1,6 @@
 from django.shortcuts import render
-# from django.http import HttpResponse
+from .models import Plant
 
-class Plant:
-    def __init__(self, name, variety, category):
-        self.name = name
-        self.variety = variety
-        self.category = category
-
-plants = [
-    Plant('Green Bean', 'Contender', 'Vegeteable',),
-    Plant('Summer Squash', 'Chifon squash', 'Vegetable'),
-    Plant('Rosemary', 'Bush', 'Herb')
-]
 # Create your views here.
 def home(request):
     return render(request, 'home.html')
@@ -20,4 +9,9 @@ def about(request):
     return render(request, 'about.html')
 
 def plant_index(request):
+    plants = Plant.objects.all()
     return render(request, 'plants/index.html', {'plants': plants})
+
+def plant_detail(request, plant_id):
+    plant = Plant.objects.get(id=plant_id)
+    return render(request, 'plants/detail.html', {'plant': plant})
