@@ -7,5 +7,9 @@
     <p>{{ plant.name }} is of the {{ plant.variety }} variety</p>
     <p>It is a {{ plant.category }}.</p>
   </div>
+  <div class="plant-actions">
+    <a href="{% url 'plant-update' plant.id %}" class="btn warn">Update Plant</a>
+    <a href="{% url 'plant-delete' plant.id %}" class="btn danger">Remove from Garden</a>
+  </div>
 </section>
 {% endblock %}
