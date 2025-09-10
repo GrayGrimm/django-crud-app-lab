@@ -48,6 +48,10 @@ header {
   box-shadow: var(--shadow);
 }
 
+a {
+  text-decoration: none;
+}
+
 nav {
   margin: 10px 0;
 }
