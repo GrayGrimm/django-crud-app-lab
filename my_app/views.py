@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.views.generic.edit import CreateView
 from .models import Plant
 
 # Create your views here.
@@ -15,3 +16,7 @@ def plant_index(request):
 def plant_detail(request, plant_id):
     plant = Plant.objects.get(id=plant_id)
     return render(request, 'plants/detail.html', {'plant': plant})
+
+class PlantCreate(CreateView):
+    model = Plant
+    fields = '__all__'
