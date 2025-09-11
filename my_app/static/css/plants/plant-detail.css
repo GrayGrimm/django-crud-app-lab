@@ -1,50 +1,52 @@
 .plant-container {
-    padding: 30px 25px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--button-bg);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
+  padding: 30px 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--button-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
 }
 
 .plant-details {
-    width: 95%;
-    font-family: var(--font-body);
+  width: 65%;
+  font-family: var(--font-body);
 }
 
 .plant-details h1 {
-    font-size: var(--font-xl);
-    margin: 12px 0 4px;
-    font-family: var(--font-title);
-    color: var(--accent);
+  font-size: var(--font-xl);
+  margin: 12px 0 4px;
+  font-family: var(--font-title);
+  color: var(--accent);
 }
 
 .plant-details h2 {
-    font-size: var(--font-l);
-    margin: 0 0 10px;
-    font-family: var(--font-title);
+  font-size: var(--font-l);
+  margin: 0 0 10px;
+  font-family: var(--font-title);
 }
 
 .plant-details h3 {
-    margin: 16px 0 8px;
-    font-size: var(--font-reg);
-    font-family: var(--font-title);
+  margin: 16px 0 8px;
+  font-size: var(--font-reg);
+  font-family: var(--font-title);
 }
 
 .plant-details p {
-    font-size: var(--font-reg);
-    line-height: 1.6;
-    margin: 5px 0;
-
+  font-size: var(--font-reg);
+  line-height: 1.6;
+  margin: 5px 0;
 }
-
+a {
+  gap: 10px;
+  line-height: 1.6;
+  margin: 5px 0;
+}
 @media only screen and (min-width: 768px) {
-    .plant-container {
-        flex-direction: row;
-        align-items: flex-start;
-        justify-content: space-between;
-    }
-
+  .plant-container {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
 }
