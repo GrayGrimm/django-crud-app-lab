@@ -33,6 +33,7 @@
   <div class="subsection-title">
     <h2>Waterings</h2>
   </div>
+  {% if plant.watering_set.all.count %}
   <table>
     <thead>
       <tr>
@@ -47,6 +48,11 @@
       {% endfor %}
     </tbody>
   </table>
+  {% else %}
+  <div class="subsection-content">
+    <p>⚠️ {{ plant.name }} has not been watered</p>
+  </div>
+  {% endif %}
 </section>
 
 {% endblock %}
