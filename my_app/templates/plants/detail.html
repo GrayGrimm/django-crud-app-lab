@@ -8,9 +8,45 @@
     <p>It is a {{ plant.category }}.</p>
   </div>
   <div class="plant-actions">
-    <a href="{% url 'plant-update' plant.id %}" class="btn warn">Update Plant</a>
-  </br></br></br>
-    <a href="{% url 'plant-delete' plant.id %}" class="btn danger">Remove from Garden</a>
+    <a href="{% url 'plant-update' plant.id %}" class="btn warn"
+      >Update Plant</a
+    >
+    <br /><br /><br />
+    <a href="{% url 'plant-delete' plant.id %}" class="btn danger"
+      >Remove from Garden</a
+    >
   </div>
 </section>
+<section class="waterings">
+  <div class="watering-form">
+    <h3>Add a Watering</h3>
+    <form
+      action="{% url 'add-watering' plant.id %}"
+      method="post"
+      class="subsection-content"
+      autocomplete="off"
+    >
+      {% csrf_token %} {{ watering_form.as_p }}
+      <button type="submit" class="btn submit">Add Watering</button>
+    </form>
+  </div>
+  <div class="subsection-title">
+    <h2>Waterings</h2>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for watering in plant.watering_set.all %}
+      <tr>
+        <td>{{watering.date}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</section>
+
 {% endblock %}
