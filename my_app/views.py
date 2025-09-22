@@ -1,12 +1,13 @@
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.contrib.auth.views import LoginView
 from .models import Plant
 from .forms import WateringForm
 
 
 # Create your views here.
-def home(request):
-    return render(request, "home.html")
+class Home(LoginView):
+    template_name = "home.html"
 
 
 def about(request):
@@ -28,7 +29,11 @@ def plant_detail(request, plant_id):
 
 class PlantCreate(CreateView):
     model = Plant
-    fields = "__all__"
+    fields = ["name", "variety", "category", "date_planted"]
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)
 
 
 class PlantUpdate(UpdateView):

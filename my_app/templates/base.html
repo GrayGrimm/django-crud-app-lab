@@ -13,9 +13,20 @@
     <header>
       <nav>
         <ul>
+          {% if user.is_authenticated %}
           <li><a href="{% url 'plant-index' %}">All Plants</a></li>
           <li><a href="{% url 'plant-create' %}">Add to Garden</a></li>
           <li><a href="{%url 'about' %}">About</a></li>
+          <li>
+            <form id="logout-form" method="post" action="{% url 'logout' %}">
+              {% csrf_token %}
+              <button type="submit">Log out</button>
+            </form>
+          </li>
+          {% else %}
+          <li><a href="{% url 'about' %}">About</a></li>
+          <li><a href="{% url 'home' %}">Login</a></li>
+          {% endif %}
         </ul>
       </nav>
     </header>
